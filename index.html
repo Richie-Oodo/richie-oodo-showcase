@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ricchie Oodo | Project Management & Data Protection</title>
+<meta name="description" content="Interactive portfolio of Ricchie Oodo: project management, GDPR and data protection, training, and privacy-tech product thinking.">
+<style>
+:root{
+  --bg:#0b0f1a;--bg2:#121829;--card:#161d31;--ink:#e8ecf6;--mute:#93a0bd;--line:#26304a;
+  --a:#6ee7b7;--b:#60a5fa;--c:#c084fc;--shadow:0 10px 40px rgba(0,0,0,.35);
+}
+:root[data-theme="light"]{
+  --bg:#f6f8fc;--bg2:#eaeff8;--card:#ffffff;--ink:#121829;--mute:#55627e;--line:#d6deee;
+  --a:#059669;--b:#2563eb;--c:#7c3aed;--shadow:0 10px 30px rgba(30,50,100,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow-x:hidden}
+a{color:inherit}
+.blob{position:fixed;border-radius:50%;filter:blur(90px);opacity:.28;z-index:0;pointer-events:none;animation:float 18s ease-in-out infinite}
+.b1{width:420px;height:420px;background:var(--b);top:-100px;left:-80px}
+.b2{width:380px;height:380px;background:var(--c);bottom:-120px;right:-80px;animation-delay:-6s}
+.b3{width:300px;height:300px;background:var(--a);top:45%;left:55%;animation-delay:-11s;opacity:.15}
+@keyframes float{50%{transform:translate(40px,-30px) scale(1.1)}}
+main,nav,footer{position:relative;z-index:1}
+nav{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:14px 5vw;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 70%,transparent);border-bottom:1px solid var(--line)}
+nav .logo{font-weight:800;letter-spacing:.5px}
+nav .logo span{color:var(--a)}
+nav ul{display:flex;gap:22px;list-style:none;align-items:center}
+nav a{text-decoration:none;color:var(--mute);font-size:14px;transition:color .2s}
+nav a:hover{color:var(--ink)}
+#theme{background:var(--card);border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:6px 12px;cursor:pointer;font-size:14px}
+section{padding:90px 5vw;max-width:1150px;margin:0 auto}
+.hero{min-height:88vh;display:flex;flex-direction:column;justify-content:center}
+.eyebrow{color:var(--a);font-weight:600;letter-spacing:2px;text-transform:uppercase;font-size:13px}
+h1{font-size:clamp(2.4rem,7vw,5rem);line-height:1.05;margin:14px 0;font-weight:800}
+h1 .grad{background:linear-gradient(90deg,var(--a),var(--b),var(--c));-webkit-background-clip:text;background-clip:text;color:transparent}
+.typed{font-size:clamp(1.1rem,2.6vw,1.6rem);color:var(--mute);min-height:2em}
+.typed::after{content:"|";color:var(--a);animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.lede{max-width:640px;margin:18px 0 28px;color:var(--mute);font-size:1.08rem}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 22px;border-radius:12px;font-weight:600;text-decoration:none;border:1px solid var(--line);background:var(--card);transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.btn.primary{background:linear-gradient(90deg,var(--b),var(--c));color:#fff;border:0}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-top:48px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+.stat b{display:block;font-size:1.9rem;color:var(--a)}
+.stat span{color:var(--mute);font-size:.9rem}
+h2{font-size:clamp(1.7rem,4vw,2.5rem);margin-bottom:8px}
+.sub{color:var(--mute);margin-bottom:30px;max-width:640px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--mute);padding:7px 16px;border-radius:999px;cursor:pointer;font-size:14px;transition:.2s}
+.chip:hover{color:var(--ink)}
+.chip.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:18px}
+.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;cursor:pointer;overflow:hidden;transition:transform .25s,box-shadow .25s,opacity .3s}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--x,50%) var(--y,0%),color-mix(in srgb,var(--b) 22%,transparent),transparent 60%);opacity:0;transition:opacity .3s}
+.card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.card:hover::before{opacity:1}
+.card>*{position:relative}
+.card .ico{font-size:2rem}
+.card h3{margin:10px 0 6px}
+.card p{color:var(--mute);font-size:.95rem}
+.tag{display:inline-block;margin-top:14px;font-size:12px;color:var(--a);border:1px solid color-mix(in srgb,var(--a) 40%,transparent);padding:2px 10px;border-radius:999px;margin-right:6px}
+.card.hide{display:none}
+.more{margin-top:14px;font-size:13px;color:var(--b);font-weight:600}
+/* modal */
+.modal{position:fixed;inset:0;z-index:50;background:rgba(5,8,16,.7);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:20px}
+.modal.open{display:flex;animation:fade .2s}
+@keyframes fade{from{opacity:0}}
+.sheet{background:var(--card);border:1px solid var(--line);border-radius:22px;max-width:640px;width:100%;max-height:88vh;overflow:auto;padding:32px;box-shadow:var(--shadow);animation:pop .25s}
+@keyframes pop{from{transform:translateY(20px) scale(.97);opacity:0}}
+.sheet h3{font-size:1.6rem;margin-bottom:4px}
+.sheet h4{margin:20px 0 6px;color:var(--a);font-size:.8rem;letter-spacing:1.5px;text-transform:uppercase}
+.sheet ul{padding-left:20px;color:var(--mute)}
+.sheet li{margin:4px 0}
+.x{float:right;background:none;border:1px solid var(--line);color:var(--ink);border-radius:50%;width:34px;height:34px;cursor:pointer;font-size:16px}
+/* stepper */
+.stepper{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:20px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 8px;text-align:center;cursor:pointer;transition:.2s;color:var(--mute);font-weight:600;font-size:14px}
+.step.on{border-color:var(--b);color:var(--ink);background:color-mix(in srgb,var(--b) 14%,var(--card));transform:translateY(-3px)}
+.step i{display:block;font-style:normal;font-size:1.4rem}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;min-height:150px}
+.panel h3{margin-bottom:6px}
+.panel p{color:var(--mute)}
+.bar{height:5px;background:var(--line);border-radius:9px;margin-bottom:18px;overflow:hidden}
+.bar div{height:100%;width:20%;background:linear-gradient(90deg,var(--a),var(--b),var(--c));transition:width .4s}
+/* modules */
+.mods{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+.mod{padding:10px 18px;border-radius:12px;border:1px solid var(--line);background:var(--card);cursor:pointer;color:var(--mute);transition:.2s;font-size:14px}
+.mod:hover{transform:translateY(-2px);color:var(--ink)}
+.mod.on{background:linear-gradient(90deg,var(--b),var(--c));color:#fff;border-color:transparent}
+.lead{font-size:1.15rem;color:var(--mute);max-width:720px}
+/* skills */
+.skillwrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.skillbox{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+.skillbox h3{margin-bottom:12px}
+.skillbox span{display:inline-block;margin:4px 4px 0 0;padding:4px 12px;border-radius:999px;background:var(--bg2);font-size:13px;color:var(--mute);transition:.2s}
+.skillbox span:hover{background:var(--a);color:#06241a;transform:scale(1.07)}
+footer{text-align:center;padding:60px 5vw 80px;color:var(--mute)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:700px){nav ul li:not(:last-child){display:none}.stepper{grid-template-columns:repeat(5,1fr);gap:4px}.step{font-size:11px;padding:10px 2px}section{padding:64px 16px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+
+<nav>
+  <div class="logo">ricchie<span>.oodo</span></div>
+  <ul>
+    <li><a href="#work">Projects</a></li>
+    <li><a href="#method">Method</a></li>
+    <li><a href="#trustcore">TrustCore</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><button id="theme" aria-label="Toggle theme">🌙</button></li>
+  </ul>
+</nav>
+
+<main>
+<section class="hero">
+  <div class="eyebrow">Project Management × Data Protection</div>
+  <h1>I turn privacy rules into <span class="grad">things people actually do.</span></h1>
+  <div class="typed" id="typed" aria-live="off"></div>
+  <p class="lede">Hi, I'm Ricchie. I run privacy and data protection projects inside a large organisation: programmes, training, audits and tooling. I also design the privacy-tech I wish existed.</p>
+  <div class="cta">
+    <a class="btn primary" href="#work">Explore my projects</a>
+    <a class="btn" href="https://github.com/Richie-Oodo">GitHub profile</a>
+  </div>
+  <div class="stats">
+    <div class="stat"><b data-n="5">0</b><span>Flagship projects below</span></div>
+    <div class="stat"><b data-n="2">0</b><span>E-learning series built</span></div>
+    <div class="stat"><b data-n="3">0</b><span>Regulations in TrustCore scope</span></div>
+    <div class="stat"><b data-n="1">0</b><span>Obsession: making compliance usable</span></div>
+  </div>
+</section>
+
+<section id="work" class="reveal">
+  <h2>Projects</h2>
+  <p class="sub">Filter by theme, then open any card for the story behind it: the problem, what I did, and what I learned.</p>
+  <div class="chips" id="chips">
+    <button class="chip on" data-f="all">All</button>
+    <button class="chip" data-f="privacy">Privacy programme</button>
+    <button class="chip" data-f="pm">Project management</button>
+    <button class="chip" data-f="training">Training</button>
+    <button class="chip" data-f="product">Product</button>
+  </div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section id="method" class="reveal">
+  <h2>How I run a project</h2>
+  <p class="sub">Click through the lifecycle. It's PMBOK-informed, but shaped by what actually works in a large organisation.</p>
+  <div class="stepper" id="stepper"></div>
+  <div class="bar"><div id="barfill"></div></div>
+  <div class="panel" id="panel"></div>
+</section>
+
+<section id="trustcore" class="reveal">
+  <h2>TrustCore <span style="font-size:.5em;color:var(--mute);font-weight:500">concept</span></h2>
+  <p class="sub">An AI-assisted privacy compliance platform, designed in the open as a concept. It grew from digitising DPIAs at work and asking what a better tool would look like. Tap a module.</p>
+  <div class="mods" id="mods"></div>
+  <p class="lead" id="modtext"></p>
+</section>
+
+<section id="skills" class="reveal">
+  <h2>Toolkit</h2>
+  <p class="sub">Hover around.</p>
+  <div class="skillwrap" id="skillwrap"></div>
+</section>
+</main>
+
+<footer>
+  <p>Built by hand, no frameworks. Find me on <a href="https://github.com/Richie-Oodo" style="color:var(--a)">GitHub</a>.</p>
+  <p style="font-size:13px;margin-top:8px">Project descriptions are high-level and omit confidential or internal details.</p>
+</footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true"><div class="sheet" id="sheet"></div></div>
+
+<script>
+const projects=[
+ {id:"ppg",ico:"🤝",cat:["privacy","pm"],title:"Privacy Champions Network",blurb:"Revitalised a cross-functional network of privacy reps into an active champions community.",
+  problem:"A group of privacy representatives from across the organisation existed, but engagement and shared purpose had faded.",
+  did:["Relaunched the group with a welcome pack and information pack for new members","Ran regular meetings with agendas and minutes, and in-person champion events","Built a yearly programme of activities with monthly champion topics","Collected feedback through an internal survey"],
+  learned:"Networks run on momentum. Clear onboarding and a visible calendar did more than any mandate.",tools:["Stakeholder engagement","Facilitation","Survey design","Programme planning"]},
+ {id:"dpia",ico:"📋",cat:["pm","privacy"],title:"DPIA Digitisation & Strategy",blurb:"Explored a digital DPIA platform, then pivoted to a strategy that stops assessments stalling.",
+  problem:"Data Protection Impact Assessments were slow to reach sign-off and hard to track across the organisation.",
+  did:["Worked with the internal digital team to scope an app for managing DPIAs","Tested the idea of separating full and mini DPIAs, found it added friction, and shelved it deliberately","Wrote a DPIA strategy and procedure focused on unblocking sign-off","Audited active versus completed DPIAs to see where things stuck"],
+  learned:"Killing a good-looking idea early is a result. The audit pointed to process, not software, as the bottleneck.",tools:["Requirements analysis","Process mapping","Audit","Procedure writing"]},
+ {id:"train",ico:"🎓",cat:["training","privacy"],title:"GDPR Training Rollout",blurb:"E-learning for all staff, including people without work email.",
+  problem:"Everyone who handles personal data needs training, but a large workforce is hard to reach and easy to bore.",
+  did:["Built two e-learning series: a Data Protection Journey and a data-security series covering mobile, social media, office and passwords","Wrote certificate and completion page wording, all-staff communications and manager guidance","Designed in-person workshop slides for frontline staff without email access"],
+  learned:"Reach is a design problem. Offering a route for every kind of worker mattered as much as the content.",tools:["Instructional design","Internal comms","Workshop design","Accessibility"]},
+ {id:"cctv",ico:"📹",cat:["privacy","pm"],title:"CCTV Audit & Central Repository",blurb:"A strategy to bring CCTV across many sites under one clear, documented view.",
+  problem:"CCTV systems are spread across many sites, with uneven documentation against regulator guidance.",
+  did:["Summarised regulator guidance into plain-language material and a CCTV infographic","Designed a questionnaire-based audit and a central internal repository","Drafted a high-level strategy, with a detailed plan as the next stage"],
+  learned:"Start with a questionnaire and a repository. You get 80% of the visibility before anyone leaves their desk.",tools:["Audit design","Strategy","Information design","Regulatory interpretation"]},
+ {id:"tc",ico:"🛡️",cat:["product"],title:"TrustCore Platform Concept",blurb:"A privacy compliance platform concept with AI assistance, designed from the practitioner's chair.",
+  problem:"Privacy teams juggle DPIAs, DSARs, vendors and breaches across spreadsheets and email.",
+  did:["Wrote a product blueprint, MVP roadmap and business case","Defined modules for DPIAs, DSARs, vendors, breaches, ROPA, consent and training","Specified light and dark modes, web and mobile MVP, and a client-facing audience"],
+  learned:"The best product ideas come from a day job's daily friction. This one is a concept, and I'm clear about that.",tools:["Product strategy","Roadmapping","UX specification","Business case"]},
+ {id:"learn",ico:"📚",cat:["pm"],title:"Project Management Studies",blurb:"Applied PM theory to a real project, from stakeholders to benefits.",
+  problem:"Theory only sticks when it's pinned to something real.",
+  did:["Used the DPIA project as a live case for stakeholder analysis (Mendelow, Freeman, Bourne, Bryson)","Built a planning dossier: WBS, schedule, cost and resources","Applied systems thinking, benefits realisation and Tuckman team development","Linked it all back to PMBOK"],
+  learned:"A real case study exposes which frameworks help and which are decoration.",tools:["PMBOK","WBS & scheduling","Stakeholder mapping","Risk & governance"]}
+];
+const grid=document.getElementById('grid');
+projects.forEach(p=>{
+  const el=document.createElement('div');el.className='card';el.dataset.cat=p.cat.join(' ');el.tabIndex=0;
+  el.innerHTML=`<div class="ico">${p.ico}</div><h3>${p.title}</h3><p>${p.blurb}</p>${p.cat.map(c=>`<span class="tag">${c}</span>`).join('')}<div class="more">Open story →</div>`;
+  el.addEventListener('mousemove',e=>{const r=el.getBoundingClientRect();el.style.setProperty('--x',e.clientX-r.left+'px');el.style.setProperty('--y',e.clientY-r.top+'px')});
+  el.addEventListener('click',()=>open(p));
+  el.addEventListener('keydown',e=>{if(e.key==='Enter')open(p)});
+  grid.appendChild(el);
+});
+document.getElementById('chips').addEventListener('click',e=>{
+  const b=e.target.closest('.chip');if(!b)return;
+  document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('on',c===b));
+  const f=b.dataset.f;
+  document.querySelectorAll('.card').forEach(c=>c.classList.toggle('hide',f!=='all'&&!c.dataset.cat.split(' ').includes(f)));
+});
+const modal=document.getElementById('modal'),sheet=document.getElementById('sheet');
+function open(p){
+  sheet.innerHTML=`<button class="x" aria-label="Close">✕</button><div style="font-size:2.2rem">${p.ico}</div><h3>${p.title}</h3>
+  <h4>The problem</h4><p style="color:var(--mute)">${p.problem}</p>
+  <h4>What I did</h4><ul>${p.did.map(d=>`<li>${d}</li>`).join('')}</ul>
+  <h4>What I learned</h4><p style="color:var(--mute)">${p.learned}</p>
+  <h4>Skills used</h4>${p.tools.map(t=>`<span class="tag">${t}</span>`).join('')}`;
+  modal.classList.add('open');sheet.querySelector('.x').focus();
+}
+const close=()=>modal.classList.remove('open');
+modal.addEventListener('click',e=>{if(e.target===modal||e.target.closest('.x'))close()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+
+/* lifecycle */
+const steps=[
+ {i:"🧭",n:"Initiate",t:"Find the real problem",d:"Who is affected, who decides, and what does success look like? I map stakeholders (power vs interest) before writing a single task, and I'm willing to reshape the brief if the evidence says so."},
+ {i:"🗺️",n:"Plan",t:"Make it concrete",d:"A work breakdown, a realistic schedule, owners and a light-touch risk register. Plans stay short enough that people actually read them."},
+ {i:"⚙️",n:"Execute",t:"Keep people moving",d:"Clear agendas, short minutes, visible actions. Pilot small, learn fast, then scale. Communication is tailored to each audience, from senior leaders to staff with no work email."},
+ {i:"📈",n:"Monitor",t:"Measure what matters",d:"Audits, surveys and status checks tell me whether it's working, not just whether it's on time. This is where the DPIA pivot came from."},
+ {i:"🏁",n:"Close",t:"Land the benefits",d:"Hand over cleanly, document lessons, and check benefits are realised. A project isn't done until the new way of working sticks."}
+];
+const stepper=document.getElementById('stepper'),panel=document.getElementById('panel'),fill=document.getElementById('barfill');
+steps.forEach((s,k)=>{const b=document.createElement('div');b.className='step';b.innerHTML=`<i>${s.i}</i>${s.n}`;b.onclick=()=>show(k);stepper.appendChild(b)});
+function show(k){
+  [...stepper.children].forEach((c,j)=>c.classList.toggle('on',j===k));
+  fill.style.width=(k+1)*20+'%';
+  panel.innerHTML=`<h3>${steps[k].n}: ${steps[k].t}</h3><p>${steps[k].d}</p>`;
+}
+show(0);
+
+/* trustcore */
+const mods={
+ "DPIAs":"Guided impact assessments with risk scoring, approval workflow and an audit trail, aimed squarely at stopping assessments stalling.",
+ "DSARs":"Intake, identity checks, deadline tracking and redaction support for subject access requests.",
+ "Vendors":"Third-party risk assessments and contract/processor tracking in one place.",
+ "Breaches":"Incident logging with a clear decision path for notification timelines.",
+ "ROPA":"A living data inventory and record of processing, linked to retention rules.",
+ "Consent":"Cookie, consent and preference management for client-facing sites.",
+ "Training":"Role-based learning and completion tracking, drawing on my GDPR rollout experience.",
+ "Dashboards":"Risk and workload views for privacy leads, with light and dark modes and web and mobile in the MVP."
+};
+const modsEl=document.getElementById('mods'),mt=document.getElementById('modtext');
+Object.keys(mods).forEach((k,i)=>{const b=document.createElement('button');b.className='mod';b.textContent=k;b.onclick=()=>pick(k,b);modsEl.appendChild(b);if(!i)pick(k,b)});
+function pick(k,b){document.querySelectorAll('.mod').forEach(m=>m.classList.toggle('on',m===b));mt.textContent=mods[k]}
+
+/* skills */
+const skills={"Project Management":["PMBOK","WBS","Scheduling","Risk & governance","Stakeholder analysis","Benefits realisation","Change management"],
+ "Data Protection":["GDPR","DPIAs","Access requests","CCTV compliance","Breach procedures","Policy writing","Regulator guidance"],
+ "Communication":["Training design","E-learning","Workshops","Minutes & agendas","Infographics","Internal comms","Presentations"],
+ "Product & Tech":["Product strategy","Roadmapping","Wireframing","HTML/CSS/JS","GitHub Pages","AI-assisted workflows"]};
+const sw=document.getElementById('skillwrap');
+for(const [k,v] of Object.entries(skills)){const d=document.createElement('div');d.className='skillbox';d.innerHTML=`<h3>${k}</h3>${v.map(x=>`<span>${x}</span>`).join('')}`;sw.appendChild(d)}
+
+/* typed */
+const phrases=["Project manager.","Data protection practitioner.","Training designer.","Privacy-tech thinker."];
+const te=document.getElementById('typed');let pi=0,ci=0,del=false;
+(function tick(){const w=phrases[pi];te.textContent=w.slice(0,ci);
+ if(!del&&ci===w.length){del=true;return setTimeout(tick,1400)}
+ if(del&&ci===0){del=false;pi=(pi+1)%phrases.length}
+ ci+=del?-1:1;setTimeout(tick,del?35:70)})();
+
+/* counters + reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.querySelectorAll('[data-n]').forEach(el=>{const n=+el.dataset.n;let c=0;const t=setInterval(()=>{c++;el.textContent=c;if(c>=n)clearInterval(t)},180)});
+
+/* theme */
+const root=document.documentElement,tb=document.getElementById('theme');
+function setTheme(t){root.dataset.theme=t;tb.textContent=t==='dark'?'🌙':'☀️';try{localStorage.setItem('theme',t)}catch(e){}}
+let saved=null;try{saved=localStorage.getItem('theme')}catch(e){}
+setTheme(saved||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'));
+tb.onclick=()=>setTheme(root.dataset.theme==='dark'?'light':'dark');
+</script>
+</body>
+</html>
